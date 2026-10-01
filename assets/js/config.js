@@ -1,7 +1,7 @@
 window.SITE_CONFIG = {
   // Cambia estos campos una sola vez; encabezado, pie, título y contacto se actualizan desde aquí.
   company: {
-    name: 'Lederes All Services',
+    name: 'Lederes Tech',
     logoMark: '',
     visualLabelTitle: 'Soluciones integrales',
     visualLabelText: 'Diseñadas para tu espacio',
@@ -13,7 +13,7 @@ window.SITE_CONFIG = {
     phoneDisplay: '+51 999 999 999', 
     phoneE164: '+51999999999', 
     whatsapp: '51961377779', 
-    email: 'info@lederesallservices.com', 
+    email: 'info@lederestech.com', 
     address: 'Lima, Perú', 
     hours: 'Lun – Vie · 9:00 a.m. – 5:00 p.m. </br> Sab · 9:00 a. m. – 1:00 p.m.', 
     copyrightName: ''
