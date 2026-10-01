@@ -1,0 +1,66 @@
+/* Font Awesome: tamaños y alineación del sistema de iconos. */
+.service-icon i {
+    font-size: 17px
+}
+
+.card-art i {
+    font-size: .7em
+}
+
+.benefit-icon i {
+    font-size: 11px
+}
+
+.contact-list i,
+.contact-whatsapp>a i,
+.side-icon i {
+    font-size: 12px
+}
+
+.wa-mark i {
+    font-size: 24px
+}
+
+.social-links i {
+    font-size: 12px
+}
+
+.client-symbol i {
+    font-size: 17px
+}
+
+.trust-inner>div i {
+    margin-right: 7px;
+    color: var(--blue);
+    font-size: 14px
+}
+
+.project-overlay>i {
+    font-size: 11px
+}
+
+.service-link i,
+.hero-actions .button-primary i,
+.final-buttons i {
+    font-size: 11px
+}
+
+.slider-controls i {
+    pointer-events: none
+}
+
+.play-icon i {
+    font-size: 9px
+}
+
+.slide-pause .fa-play {
+    display: none
+}
+
+.slide-pause[aria-pressed="true"] .fa-pause {
+    display: none
+}
+
+.slide-pause[aria-pressed="true"] .fa-play {
+    display: inline-block
+}

@@ -1,0 +1,230 @@
+/* Encabezado de marca: navegación clara, contraste alto y estados visibles. */
+.header {
+    height: 76px;
+    background: rgba(255, 255, 255, .96);
+    border-bottom: 1px solid rgba(9, 42, 50, .08);
+    box-shadow: 0 3px 18px rgba(9, 42, 50, .035);
+    backdrop-filter: blur(14px);
+    transition: height .22s ease, box-shadow .22s ease, background .22s ease
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #092a32 0%, #00a995 48%, #c8f169 100%)
+}
+
+.header.is-scrolled {
+    height: 66px;
+    background: rgba(255, 255, 255, .98);
+    box-shadow: 0 8px 24px rgba(9, 42, 50, .1)
+}
+
+.nav-wrap {
+    gap: 28px
+}
+
+.brand {
+    gap: 12px;
+    flex-shrink: 0
+}
+
+.brand-mark {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(9, 42, 50, .17);
+    transition: transform .2s ease
+}
+
+.brand:hover .brand-mark {
+    transform: rotate(-5deg)
+}
+
+.brand-copy {
+    font-size: 16px;
+    letter-spacing: -.5px;
+    line-height: 1.25
+}
+
+.brand-copy small {
+    margin-top: 3px;
+    font-size: 7px;
+    letter-spacing: 1.1px;
+    white-space: nowrap
+}
+
+.nav {
+    gap: clamp(15px, 2vw, 26px);
+    height: 100%;
+    color: #53656a;
+    font-size: 11px
+}
+
+.nav>a:not(.button) {
+    height: 100%;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    transition: color .18s ease
+}
+
+.nav>a:not(.button)::after {
+    content: "";
+    position: absolute;
+    bottom: 17px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    border-radius: 2px;
+    background: #00a995;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .18s ease
+}
+
+.header.is-scrolled .nav>a:not(.button)::after {
+    bottom: 12px
+}
+
+.nav>a:not(.button):hover,
+.nav>a.is-active {
+    color: #092a32
+}
+
+.nav>a:not(.button):hover::after,
+.nav>a.is-active::after {
+    transform: scaleX(1)
+}
+
+.nav .nav-cta {
+    min-height: 42px;
+    padding: 0 17px;
+    gap: 9px;
+    border-radius: 5px;
+    box-shadow: 0 5px 14px rgba(153, 196, 76, .2);
+    white-space: nowrap
+}
+
+.nav .nav-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(153, 196, 76, .3)
+}
+
+.header.is-scrolled .brand-mark {
+    width: 36px;
+    height: 36px
+}
+
+.header :focus-visible {
+    outline-offset: 3px
+}
+
+@media(max-width:900px) {
+    .nav-wrap {
+        gap: 16px
+    }
+
+    .nav {
+        gap: 13px
+    }
+
+    .brand-copy {
+        font-size: 14px
+    }
+
+    .brand-copy small {
+        font-size: 6px;
+        letter-spacing: .8px
+    }
+
+    .nav .nav-cta {
+        padding-inline: 12px;
+        font-size: 10px
+    }
+}
+
+@media(max-width:680px) {
+
+    .header,
+    .header.is-scrolled {
+        height: 66px
+    }
+
+    .header::before {
+        height: 2px
+    }
+
+    .nav-wrap {
+        gap: 10px
+    }
+
+    .brand {
+        gap: 9px
+    }
+
+    .brand-mark,
+    .header.is-scrolled .brand-mark {
+        width: 36px;
+        height: 36px
+    }
+
+    .brand-copy {
+        font-size: 14px
+    }
+
+    .brand-copy small {
+        font-size: 6px;
+        letter-spacing: .7px
+    }
+
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #e1eae8;
+        background: #f6faf9;
+        transition: background .2s, border-color .2s
+    }
+
+    .menu-toggle:hover {
+        background: #eaf6f2;
+        border-color: #b7ddd3
+    }
+
+    .nav {
+        top: 66px;
+        padding: 10px 19px 19px;
+        gap: 0;
+        border-top: 1px solid #edf1ef
+    }
+
+    .nav>a:not(.button) {
+        height: auto;
+        min-height: 44px
+    }
+
+    .nav>a:not(.button)::after {
+        bottom: 5px;
+        right: auto;
+        width: 25px
+    }
+
+    .nav .nav-cta {
+        min-height: 45px;
+        font-size: 11px
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+    .header,
+    .brand-mark,
+    .nav>a:not(.button)::after,
+    .menu-toggle {
+        transition: none
+    }
+}

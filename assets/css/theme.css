@@ -1,0 +1,273 @@
+/* Theme layer: brand colors and component states. Loaded after styles.css. */
+:root {
+    --navy: #092a32;
+    --blue: #00a995;
+    --blue-hover: #30c5b4;
+    --ink: #142c32;
+    --muted: #71858a;
+    --line: #e0e9e8;
+    --text-white: white;
+}
+
+/* Brand accents */
+.announcement {
+    background: #061f26
+}
+
+.pulse {
+    background: #c8f169;
+    box-shadow: 0 0 0 4px #c8f16926
+}
+
+.brand-mark>span {
+    color: #8ce7d8
+}
+
+.nav>a:not(.button):hover,
+.text-link,
+.service-link {
+    color: #008f80
+}
+
+.button-primary {
+    background: var(--blue);
+    color: var(--text-white); 
+}
+
+.button-primary:hover {
+    background: var(--blue-hover);
+    box-shadow: 0 9px 22px var(--blue);
+    color: var(--text-white);
+    transform: translateY(-4px)
+}
+
+/* Service and process components */
+.service-icon,
+.benefit-icon,
+.contact-list>a>span,
+.contact-list>div>span {
+    color: #008f80
+}
+
+.service-featured, .process {
+    background: #092a32
+}
+
+/* Hero, headings and carousel controls */
+.hero h1 em,
+.section h2 em,
+.why h2 em,
+.process h2 em,
+.business h2 em,
+.final-cta h2 em {
+    color: #8ce7d8
+}
+
+.eyebrow>span {
+    background: #00a995
+}
+
+.eyebrow-light>span {
+    background: #8ce7d8
+}
+
+.hero-image {
+    transition: opacity .35s ease, background-image .5s ease
+}
+
+.hero.slide-enter .hero-copy {
+    animation: hero-reveal .55s both
+}
+
+.slide-count i {
+    width: 27px;
+    height: 1px;
+    background: #8ce7d8
+}
+
+.slider-controls {
+    display: flex;
+    align-items: center;
+    gap: 7px
+}
+
+.slider-controls button {
+    width: 28px;
+    height: 28px;
+    border: 1px solid #ffffff50;
+    background: #ffffff0b;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background .2s, border-color .2s
+}
+
+.slider-controls button:hover,
+.slider-controls button:focus-visible {
+    background: #00a995;
+    border-color: #00a995
+}
+
+.slide-dots {
+    display: flex;
+    gap: 5px;
+    padding: 0 4px
+}
+
+.slider-controls .slide-dot {
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: 0;
+    background: #ffffff69
+}
+
+.slider-controls .slide-dot.active {
+    width: 19px;
+    border-radius: 5px;
+    background: #c8f169
+}
+
+.slider-controls .slide-pause {
+    margin-left: 3px;
+    font-size: 10px
+}
+
+/* Accessible focus and motion states */
+.button:focus-visible,
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #8ce7d8;
+    outline-offset: 3px
+}
+
+.service-card,
+.testimonial,
+.project,
+.section-heading,
+.why-visual,
+.why-copy,
+.step,
+.business-copy,
+.business-side,
+.contact-form,
+.client-list>div {
+    transition: opacity .55s ease, transform .55s ease, box-shadow .25s, background .25s
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(18px)
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0)
+}
+
+.service-card:nth-child(2),
+.testimonial:nth-child(2),
+.client-list>div:nth-child(2) {
+    transition-delay: .07s
+}
+
+.service-card:nth-child(3),
+.testimonial:nth-child(3),
+.client-list>div:nth-child(3) {
+    transition-delay: .14s
+}
+
+.client-list>div:nth-child(4) {
+    transition-delay: .21s
+}
+
+.client-list>div:nth-child(5) {
+    transition-delay: .28s
+}
+
+.final-cta {
+    background: #008f80
+}
+
+.cta-star {
+    color: #00a995
+}
+
+.floating-wa {
+    background: #00a76f
+}
+
+.project-cta {
+    background: #e5f5ef
+}
+
+.project-cta:hover {
+    background: #d8f2e8
+}
+
+.project-cta>span:last-child {
+    color: #007b70
+}
+
+@keyframes hero-reveal {
+    from {
+        opacity: .25;
+        transform: translateY(9px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@media(max-width:680px) {
+    .slider-controls {
+        gap: 4px
+    }
+
+    .slider-controls button {
+        width: 25px;
+        height: 25px
+    }
+
+    .slide-dots {
+        gap: 4px
+    }
+
+    .hero-bottom {
+        gap: 6px
+    }
+
+    .hero-bottom>a {
+        max-width: 92px;
+        text-align: right;
+        line-height: 1.5
+    }
+
+    .hero-bottom .slide-count {
+        gap: 6px;
+        font-size: 8px
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+    .reveal,
+    .reveal.is-visible {
+        opacity: 1;
+        transform: none
+    }
+
+    .hero.slide-enter .hero-copy {
+        animation: none
+    }
+
+    .hero-image {
+        transition: none
+    }
+}
